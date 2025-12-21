@@ -3,123 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dein Unternehmen – Alles aus einer Hand</title>
-  <meta name="description" content="Onepager für Dein Unternehmen: Produkte, Vorteile, Kontakt." />
+  <title>Farasu – Verpackung & Papier</title>
+  <meta name="description" content="Farasu Verpackung & Papier: Pizza-Kartons, Alu-Schalen und Gastro-Verpackungen. Ab 200€ frei Versand." />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Topbar -->
+  <!-- Header -->
   <header class="header" id="top">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="Start">
-        <span class="brand__logo">◆</span>
-        <span class="brand__name">DEIN LOGO</span>
+        <img class="brand__img" src="./assets/logo.jpg" alt="Farasu – Verpackung & Papier" />
+        <span class="brand__name">FARASU</span>
       </a>
 
-      <button class="navbtn" id="navbtn" aria-label="Menü öffnen" aria-expanded="false">
-        ☰
-      </button>
+      <button class="navbtn" id="navbtn" aria-label="Menü öffnen" aria-expanded="false">☰</button>
 
       <nav class="nav" id="nav">
         <a href="#start" class="nav__link">START</a>
         <a href="#about" class="nav__link">ÜBER UNS</a>
-        <a href="#products" class="nav__link">PRODUKTE</a>
-        <a href="#shop" class="nav__link">SHOP</a>
+        <a href="#topseller" class="nav__link">TOP SELLER</a>
+        <a href="#products" class="nav__link">SORTIMENT</a>
         <a href="#contact" class="nav__link">KONTAKT</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
   <main id="start">
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__content">
-          <h1>ALLES AUS EINER HAND<br><span class="muted">für dein Business</span></h1>
+          <h1>FARASU<br><span class="muted">Verpackung & Papier</span></h1>
+
           <p class="lead">
-            Kurzer Satz, der erklärt, was du verkaufst/lieferst – klar, ohne Buzzwords.
+            Gastro-Verpackungen für Imbiss, Restaurant & Lieferservice – schnell, zuverlässig und fair.
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#products">Zu den Produkten</a>
-            <a class="btn btn--ghost" href="#contact">Kontakt</a>
+            <a class="btn btn--primary" href="#topseller">Top Seller ansehen</a>
+            <a class="btn btn--ghost" href="#contact">Jetzt anrufen</a>
           </div>
 
           <ul class="hero__bullets">
-            <li>✓ Schnelle Lieferung</li>
-            <li>✓ Faire Preise</li>
-            <li>✓ Top Service</li>
+            <li>✓ Ab 200 € frei Versand</li>
+            <li>✓ Pizza-Kartons & Alu-Schalen</li>
+            <li>✓ Mobil & WhatsApp</li>
           </ul>
         </div>
 
         <div class="hero__card">
           <div class="hero__cardTop">
-            <p class="badge">Neu</p>
-            <h2>Highlights</h2>
+            <p class="badge">Ab 200 € frei Versand</p>
+            <h2>Direkt bestellen</h2>
             <p class="muted">
-              Kurzer Teaser: z. B. “Große Auswahl, schnelle Verfügbarkeit, einfache Bestellung.”
+              Schnell anfragen oder bestellen – am besten per WhatsApp oder Anruf.
             </p>
           </div>
           <div class="hero__cardBottom">
-            <a class="btn btn--primary btn--block" href="#shop">Zum Shop</a>
+            <a class="btn btn--primary btn--block" href="tel:+4915777120812">📞 +49 1577 7120812</a>
             <a class="btn btn--ghost btn--block" href="#products">Sortiment ansehen</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Warum wir -->
+    <!-- Über uns -->
     <section class="section" id="about">
       <div class="container">
         <div class="section__head">
-          <h2>WARUM WIR?</h2>
-          <p class="muted">Unsere Vorteile auf einen Blick.</p>
+          <h2>ÜBER UNS</h2>
+          <p class="muted">Kurz & ehrlich: Was Farasu macht.</p>
         </div>
 
         <div class="cards">
           <article class="card">
-            <h3>QUALITÄT</h3>
-            <p>Kurzer Text: Was macht deine Qualität aus? (Material, Auswahl, Zuverlässigkeit)</p>
+            <h3>GASTRO-FOKUS</h3>
+            <p>Wir liefern Verpackungen und Papierprodukte für Gastronomie, Imbisse und Lieferdienste – praktisch, stabil und preislich fair.</p>
           </article>
           <article class="card">
-            <h3>SCHNELLE LIEFERUNG</h3>
-            <p>Kurzer Text: Liefergebiet/Zeiten (z. B. 1–2 Tage, Same-Day im Umkreis…)</p>
+            <h3>SCHNELL & EINFACH</h3>
+            <p>Bestellung/Anfrage unkompliziert per Telefon oder WhatsApp. Ab 200 € liefern wir versandkostenfrei. :contentReference[oaicite:2]{index=2}</p>
           </article>
           <article class="card">
-            <h3>TOP SERVICE</h3>
-            <p>Kurzer Text: Beratung, Muster, persönliche Betreuung, flexible Lösungen.</p>
+            <h3>GROßE AUSWAHL</h3>
+            <p>Von Pizza-Kartons über Thermoschalen bis zu Alu-Schalen und vielen weiteren Artikeln – alles aus einer Hand. :contentReference[oaicite:3]{index=3}</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Produktsortiment -->
-    <section class="section section--alt" id="products">
+    <!-- Top Seller -->
+    <section class="section section--alt" id="topseller">
       <div class="container">
         <div class="section__head">
-          <h2>UNSER PRODUKTSORTIMENT</h2>
-          <p class="muted">Entdecke unsere große Auswahl an Produkten.</p>
+          <h2>TOP SELLER</h2>
+          <p class="muted">Unsere meistverkauften Artikel: Pizza-Kartons & Alu-Schalen.</p>
         </div>
 
-        <div class="grid" id="productGrid" aria-live="polite"></div>
+        <div class="grid" id="topsellerGrid" aria-live="polite"></div>
 
         <div class="center">
-          <a class="btn btn--primary" href="#shop">Zum Shop</a>
+          <a class="btn btn--primary" href="tel:+4915777120812">📞 Jetzt bestellen: +49 1577 7120812</a>
         </div>
       </div>
     </section>
 
-    <!-- Shop/CTA -->
-    <section class="section" id="shop">
+    <!-- Sortiment -->
+    <section class="section" id="products">
       <div class="container">
-        <div class="cta">
-          <div>
-            <h2>Bestellen – schnell & unkompliziert</h2>
-            <p class="muted">Hier kommt ein klarer Satz, wie Kunden bei dir bestellen sollen.</p>
+        <div class="section__head">
+          <h2>SORTIMENT</h2>
+          <p class="muted">Auszug aus dem Sortiment (Details und Verfügbarkeit auf Anfrage). :contentReference[oaicite:4]{index=4}</p>
+        </div>
+
+        <div class="productBlocks">
+          <div class="block">
+            <h3>Pizza-Kartons (100 Stk / 50 Stk)</h3>
+            <ul class="list" id="pizzaList"></ul>
           </div>
-          <div class="cta__buttons">
-            <a class="btn btn--primary" href="#" id="shopLink">Shop öffnen</a>
-            <a class="btn btn--ghost" href="#contact">Angebot anfragen</a>
+
+          <div class="block">
+            <h3>Alu-Schalen (mit Deckel)</h3>
+            <ul class="list" id="aluList"></ul>
           </div>
         </div>
       </div>
@@ -130,65 +135,47 @@
       <div class="container">
         <div class="section__head">
           <h2>KONTAKT</h2>
-          <p class="muted">So erreichst du uns.</p>
+          <p class="muted">Anfragen & Bestellungen am schnellsten per Telefon oder WhatsApp.</p>
         </div>
 
         <div class="contact">
           <div class="contact__box">
-            <h3>Firma / Adresse</h3>
-            <p class="muted" id="address">
-              Musterfirma GmbH<br>
-              Musterstraße 1<br>
-              60311 Frankfurt am Main
+            <h3>Adresse</h3>
+            <p class="muted">
+              Wald Str. 50<br>
+              63533 Mainhausen
             </p>
+            <p class="muted">Ab 200 € frei Versand. :contentReference[oaicite:5]{index=5}</p>
           </div>
 
           <div class="contact__box">
-            <h3>Telefon</h3>
-            <p><a class="link" id="phone" href="tel:+496000000000">+49 6000 000000</a></p>
-
-            <h3>E-Mail</h3>
-            <p><a class="link" id="email" href="mailto:info@deinefirma.de">info@deinefirma.de</a></p>
+            <h3>Telefon / WhatsApp</h3>
+            <p><a class="link" href="tel:+4915777120812">+49 1577 7120812</a></p>
+            <p class="muted">Mobil & WhatsApp: 0157-7712 0812 :contentReference[oaicite:6]{index=6}</p>
           </div>
 
           <div class="contact__box">
-            <h3>Öffnungszeiten</h3>
-            <p class="muted" id="hours">
-              Mo–Fr: 08:00–17:00<br>
-              Sa: 10:00–14:00<br>
-              So: geschlossen
+            <h3>Hinweis</h3>
+            <p class="muted">
+              Preise & Verfügbarkeit variieren je nach Artikel. Schreib uns kurz (WhatsApp) mit dem Artikel + Menge.
             </p>
           </div>
         </div>
-
-        <div class="legal">
-          <a class="link" href="#impressum" id="impressumLink">Impressum</a>
-          <span class="muted">|</span>
-          <a class="link" href="#datenschutz" id="privacyLink">Datenschutz</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Simple Legal Sections (Platzhalter) -->
-    <section class="section" id="impressum">
-      <div class="container">
-        <h2>Impressum</h2>
-        <p class="muted">Platzhalter – hier später dein Impressum rein.</p>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="datenschutz">
-      <div class="container">
-        <h2>Datenschutz</h2>
-        <p class="muted">Platzhalter – hier später deine Datenschutzerklärung rein.</p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="muted">© <span id="year"></span> DEIN LOGO</p>
-      <a class="link" href="#top">Nach oben ↑</a>
+      <p class="muted">© <span id="year"></span> FARASU – Verpackung & Papier</p>
+      <div class="footer__links">
+        <a class="link" href="./impressum.html">Impressum</a>
+        <span class="muted">|</span>
+        <a class="link" href="./datenschutz.html">Datenschutz</a>
+        <span class="muted">|</span>
+        <a class="link" href="#top">Nach oben ↑</a>
+      </div>
     </div>
   </footer>
 

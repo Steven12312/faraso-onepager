@@ -39,7 +39,7 @@ body{
 
 .brand{display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--text)}
 .brand__img{
-  height: 64px;        /* 👈 größer */
+  height: clamp(56px, 6vw, 76px);
   width: auto;
   object-fit: contain;
   background: transparent;
@@ -47,6 +47,7 @@ body{
   padding: 0;
   display: block;
 }
+
 
 .brand__name{font-weight:900; letter-spacing:.6px}
 

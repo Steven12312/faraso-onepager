@@ -231,6 +231,19 @@ body{
   width: 18px;
   height: 18px;
   flex: 0 0 18px;
-  color: #111; /* passt zu btn--primary (Text ist dunkel) */
+  color: #25D366; /* passt zu btn--primary (Text ist dunkel) */
+}
+.contact-actions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* 👈 horizontal mittig */
+  gap: 12px;               /* Abstand zwischen Buttons */
+  margin-top: 12px;
+}
+
+.contact-actions .btn{
+  width: 100%;
+  max-width: 260px;        /* 👈 gleiche Button-Breite */
+  justify-content: center; /* Text & Icon mittig */
 }
 

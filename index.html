@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dein Unternehmen – Alles aus einer Hand</title>
+  <meta name="description" content="Onepager für Dein Unternehmen: Produkte, Vorteile, Kontakt." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Start">
+        <span class="brand__logo">◆</span>
+        <span class="brand__name">DEIN LOGO</span>
+      </a>
+
+      <button class="navbtn" id="navbtn" aria-label="Menü öffnen" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#start" class="nav__link">START</a>
+        <a href="#about" class="nav__link">ÜBER UNS</a>
+        <a href="#products" class="nav__link">PRODUKTE</a>
+        <a href="#shop" class="nav__link">SHOP</a>
+        <a href="#contact" class="nav__link">KONTAKT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="start">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1>ALLES AUS EINER HAND<br><span class="muted">für dein Business</span></h1>
+          <p class="lead">
+            Kurzer Satz, der erklärt, was du verkaufst/lieferst – klar, ohne Buzzwords.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#products">Zu den Produkten</a>
+            <a class="btn btn--ghost" href="#contact">Kontakt</a>
+          </div>
+
+          <ul class="hero__bullets">
+            <li>✓ Schnelle Lieferung</li>
+            <li>✓ Faire Preise</li>
+            <li>✓ Top Service</li>
+          </ul>
+        </div>
+
+        <div class="hero__card">
+          <div class="hero__cardTop">
+            <p class="badge">Neu</p>
+            <h2>Highlights</h2>
+            <p class="muted">
+              Kurzer Teaser: z. B. “Große Auswahl, schnelle Verfügbarkeit, einfache Bestellung.”
+            </p>
+          </div>
+          <div class="hero__cardBottom">
+            <a class="btn btn--primary btn--block" href="#shop">Zum Shop</a>
+            <a class="btn btn--ghost btn--block" href="#products">Sortiment ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum wir -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>WARUM WIR?</h2>
+          <p class="muted">Unsere Vorteile auf einen Blick.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>QUALITÄT</h3>
+            <p>Kurzer Text: Was macht deine Qualität aus? (Material, Auswahl, Zuverlässigkeit)</p>
+          </article>
+          <article class="card">
+            <h3>SCHNELLE LIEFERUNG</h3>
+            <p>Kurzer Text: Liefergebiet/Zeiten (z. B. 1–2 Tage, Same-Day im Umkreis…)</p>
+          </article>
+          <article class="card">
+            <h3>TOP SERVICE</h3>
+            <p>Kurzer Text: Beratung, Muster, persönliche Betreuung, flexible Lösungen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produktsortiment -->
+    <section class="section section--alt" id="products">
+      <div class="container">
+        <div class="section__head">
+          <h2>UNSER PRODUKTSORTIMENT</h2>
+          <p class="muted">Entdecke unsere große Auswahl an Produkten.</p>
+        </div>
+
+        <div class="grid" id="productGrid" aria-live="polite"></div>
+
+        <div class="center">
+          <a class="btn btn--primary" href="#shop">Zum Shop</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop/CTA -->
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Bestellen – schnell & unkompliziert</h2>
+            <p class="muted">Hier kommt ein klarer Satz, wie Kunden bei dir bestellen sollen.</p>
+          </div>
+          <div class="cta__buttons">
+            <a class="btn btn--primary" href="#" id="shopLink">Shop öffnen</a>
+            <a class="btn btn--ghost" href="#contact">Angebot anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>KONTAKT</h2>
+          <p class="muted">So erreichst du uns.</p>
+        </div>
+
+        <div class="contact">
+          <div class="contact__box">
+            <h3>Firma / Adresse</h3>
+            <p class="muted" id="address">
+              Musterfirma GmbH<br>
+              Musterstraße 1<br>
+              60311 Frankfurt am Main
+            </p>
+          </div>
+
+          <div class="contact__box">
+            <h3>Telefon</h3>
+            <p><a class="link" id="phone" href="tel:+496000000000">+49 6000 000000</a></p>
+
+            <h3>E-Mail</h3>
+            <p><a class="link" id="email" href="mailto:info@deinefirma.de">info@deinefirma.de</a></p>
+          </div>
+
+          <div class="contact__box">
+            <h3>Öffnungszeiten</h3>
+            <p class="muted" id="hours">
+              Mo–Fr: 08:00–17:00<br>
+              Sa: 10:00–14:00<br>
+              So: geschlossen
+            </p>
+          </div>
+        </div>
+
+        <div class="legal">
+          <a class="link" href="#impressum" id="impressumLink">Impressum</a>
+          <span class="muted">|</span>
+          <a class="link" href="#datenschutz" id="privacyLink">Datenschutz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple Legal Sections (Platzhalter) -->
+    <section class="section" id="impressum">
+      <div class="container">
+        <h2>Impressum</h2>
+        <p class="muted">Platzhalter – hier später dein Impressum rein.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="datenschutz">
+      <div class="container">
+        <h2>Datenschutz</h2>
+        <p class="muted">Platzhalter – hier später deine Datenschutzerklärung rein.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="muted">© <span id="year"></span> DEIN LOGO</p>
+      <a class="link" href="#top">Nach oben ↑</a>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

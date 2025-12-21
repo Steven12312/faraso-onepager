@@ -1,7 +1,6 @@
 :root{
   --bg:#0b0f14;
   --panel:#101722;
-  --panel2:#0e141e;
   --text:#e9eef5;
   --muted:#aab7c6;
   --line:rgba(255,255,255,.10);
@@ -23,11 +22,7 @@ body{
   color:var(--text);
 }
 
-.container{
-  width:min(1100px, calc(100% - 32px));
-  margin:0 auto;
-}
-
+.container{width:min(1100px, calc(100% - 32px)); margin:0 auto;}
 .muted{color:var(--muted)}
 .lead{font-size:1.05rem; line-height:1.6; color:var(--muted)}
 .center{display:flex; justify-content:center; margin-top:18px}
@@ -40,23 +35,21 @@ body{
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--line);
 }
-.header__inner{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 0;
-}
+.header__inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
 
 .brand{display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--text)}
-.brand__logo{
-  width:34px; height:34px; display:grid; place-items:center;
+.brand__img{
+  width:46px; height:46px; object-fit:contain;
   border-radius:12px;
-  background: linear-gradient(135deg, rgba(74,163,255,.9), rgba(124,92,255,.9));
-  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  padding:6px;
 }
-.brand__name{font-weight:700; letter-spacing:.4px}
+.brand__name{font-weight:900; letter-spacing:.6px}
 
 .nav{display:flex; gap:18px; align-items:center}
 .nav__link{
-  color:var(--muted); text-decoration:none; font-weight:600; font-size:.92rem;
+  color:var(--muted); text-decoration:none; font-weight:700; font-size:.92rem;
   padding:8px 10px; border-radius:10px;
 }
 .nav__link:hover{color:var(--text); background: rgba(255,255,255,.06)}
@@ -82,7 +75,7 @@ body{
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing:-.5px;
 }
-.hero__cta{display:flex; gap:12px; margin:18px 0 12px}
+.hero__cta{display:flex; gap:12px; margin:18px 0 12px; flex-wrap:wrap}
 .hero__bullets{list-style:none; padding:0; margin:10px 0 0; display:flex; gap:16px; flex-wrap:wrap}
 .hero__bullets li{color:var(--muted)}
 
@@ -103,7 +96,7 @@ body{
   border:1px solid rgba(74,163,255,.35);
   background: rgba(74,163,255,.12);
   color: var(--text);
-  font-weight:700;
+  font-weight:800;
   font-size:.82rem;
   margin:0 0 10px;
 }
@@ -113,11 +106,7 @@ body{
 .section__head{margin-bottom:18px}
 .section__head h2{margin:0 0 6px; letter-spacing:-.3px}
 
-.cards{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:14px;
-}
+.cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
 .card{
   border:1px solid var(--line);
   border-radius: var(--radius);
@@ -128,26 +117,19 @@ body{
 .card h3{margin:0 0 10px}
 .card p{margin:0; color:var(--muted); line-height:1.6}
 
-.grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:14px;
-  margin-top:12px;
-}
+.grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:12px;}
 .tile{
   border:1px solid var(--line);
   border-radius: 16px;
   background: rgba(16,23,34,.65);
   padding:16px;
   box-shadow: var(--shadow);
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-height:140px;
+  display:flex; flex-direction:column; gap:10px;
+  min-height:150px;
 }
 .tile__top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px}
-.tile__title{font-weight:800}
-.tile__meta{color:var(--muted); font-size:.9rem; line-height:1.5}
+.tile__title{font-weight:900}
+.tile__meta{color:var(--muted); font-size:.92rem; line-height:1.5}
 .pill{
   font-size:.78rem;
   color:var(--muted);
@@ -157,24 +139,18 @@ body{
   background: rgba(255,255,255,.04);
 }
 
-.cta{
+.productBlocks{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px;}
+.block{
   border:1px solid var(--line);
   border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(74,163,255,.12), rgba(124,92,255,.10));
+  background: rgba(16,23,34,.65);
   padding:18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
   box-shadow: var(--shadow);
 }
-.cta__buttons{display:flex; gap:10px; flex-wrap:wrap}
+.block h3{margin:0 0 10px}
+.list{margin:0; padding-left:18px; color:var(--muted); line-height:1.7}
 
-.contact{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:14px;
-}
+.contact{display:grid; grid-template-columns: 1fr 1fr 1fr; gap:14px;}
 .contact__box{
   border:1px solid var(--line);
   border-radius: var(--radius);
@@ -183,24 +159,19 @@ body{
   box-shadow: var(--shadow);
 }
 .contact__box h3{margin:0 0 10px}
-.legal{margin-top:18px; display:flex; gap:10px; align-items:center}
 
 .footer{
   border-top:1px solid var(--line);
   padding:18px 0;
   background: rgba(11,15,20,.75);
 }
-.footer__inner{display:flex; justify-content:space-between; align-items:center}
+.footer__inner{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+.footer__links{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:10px 14px;
-  border-radius: 14px;
-  text-decoration:none;
-  font-weight:800;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:10px 14px; border-radius: 14px;
+  text-decoration:none; font-weight:900;
   border:1px solid var(--line);
   user-select:none;
 }
@@ -209,10 +180,7 @@ body{
   color: #07101a;
   border-color: transparent;
 }
-.btn--ghost{
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-}
+.btn--ghost{background: rgba(255,255,255,.04); color:var(--text);}
 .btn--block{width:100%}
 .btn:hover{transform: translateY(-1px)}
 .btn:active{transform: translateY(0px)}
@@ -222,17 +190,16 @@ body{
   .cards{grid-template-columns:1fr}
   .grid{grid-template-columns: repeat(2, 1fr)}
   .contact{grid-template-columns:1fr}
+  .productBlocks{grid-template-columns:1fr}
   .navbtn{display:inline-flex}
   .nav{
-    position:absolute;
-    top:64px; right:16px;
-    flex-direction:column;
-    align-items:stretch;
+    position:absolute; top:64px; right:16px;
+    flex-direction:column; align-items:stretch;
     background: rgba(11,15,20,.95);
     border:1px solid var(--line);
     border-radius: 16px;
     padding:10px;
-    width: 220px;
+    width: 240px;
     display:none;
   }
   .nav.is-open{display:flex}

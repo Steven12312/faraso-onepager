@@ -220,3 +220,14 @@ body{
   font-size: 0.9rem;
   border-bottom: 2px solid rgba(0,0,0,0.15);
 }
+.btn--whatsapp{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-icon{
+  width: 18px;
+  height: 18px;
+  color: #111; /* passt zur btn--primary */
+}

@@ -39,12 +39,15 @@ body{
 
 .brand{display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--text)}
 .brand__img{
-  width:46px; height:46px; object-fit:contain;
-  border-radius:12px;
-  background: rgba(255,255,255,.06);
-  border:1px solid var(--line);
-  padding:6px;
+  height: 64px;        /* 👈 größer */
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: block;
 }
+
 .brand__name{font-weight:900; letter-spacing:.6px}
 
 .nav{display:flex; gap:18px; align-items:center}

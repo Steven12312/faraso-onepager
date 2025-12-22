@@ -64,6 +64,17 @@
           </div>
           <div class="hero__cardBottom">
             <a class="btn btn--primary btn--block" href="tel:+4915777120812">📞 +49 1577 7120812</a>
+              <a
+    href="https://wa.me/4915777120812"
+    target="_blank"
+    class="btn btn--primary btn--whatsapp"
+  >
+    <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor"
+        d="M19.11 17.44c-.27-.14-1.62-.8-1.87-.89-.25-.09-.43-.14-.61.14-.18.27-.7.89-.86 1.07-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.35-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.99 2.66 1.13 2.84c.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.62-.66 1.85-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32zM16.01 3C8.83 3 3 8.83 3 16c0 2.82.93 5.43 2.5 7.53L3 29l5.65-2.47A12.93 12.93 0 0 0 16 29c7.18 0 13-5.83 13-13S23.18 3 16.01 3z"/>
+    </svg>
+    WhatsApp schreiben
+  </a>
             <a class="btn btn--ghost btn--block" href="#products">Sortiment ansehen</a>
           </div>
         </div>
@@ -113,26 +124,48 @@
 
     <!-- Sortiment -->
     <section class="section" id="products">
-      <div class="container">
-        <div class="section__head">
-          <h2>SORTIMENT</h2>
-          <p class="muted">Auszug aus dem Sortiment (Details und Verfügbarkeit auf Anfrage).</p>
-        </div>
+  <div class="container">
+    <div class="section__head">
+      <h2>SORTIMENT</h2>
+      <p class="muted">Wähle eine Kategorie – darunter erscheinen die passenden Artikel.</p>
+    </div>
 
-        <div class="productBlocks">
-          <div class="block">
-            <h3>Pizza-Kartons (100 Stk / 50 Stk)</h3>
-            <ul class="list" id="pizzaList"></ul>
-          </div>
-
-          <div class="block">
-            <h3>Alu-Schalen (mit Deckel)</h3>
-            <ul class="list" id="aluList"></ul>
-          </div>
+    <!-- Kategorie-Auswahl -->
+    <div class="cat-grid" id="catGrid">
+      <button class="cat-card is-active" data-cat="pizza" type="button">
+        <img src="./assets/pizza.jpg" alt="Pizza-Kartons" class="cat-img">
+        <div class="cat-body">
+          <div class="cat-title">Pizza-Kartons</div>
+          <div class="cat-sub">Alle Größen anzeigen</div>
         </div>
+      </button>
+
+      <button class="cat-card" data-cat="alu" type="button">
+        <img src="./assets/alu.jpg" alt="Alu-Schalen" class="cat-img">
+        <div class="cat-body">
+          <div class="cat-title">Alu-Schalen</div>
+          <div class="cat-sub">Alle Varianten anzeigen</div>
+        </div>
+      </button>
+    </div>
+
+    <!-- Dynamischer Inhalt -->
+    <div class="cat-result block" id="catResult">
+      <h3 id="catHeading">Pizza-Kartons (100 Stk / 50 Stk)</h3>
+      <ul class="list" id="catList"></ul>
+
+      <div class="center" style="margin-top:14px;">
+        <a class="btn btn--primary btn--whatsapp" href="https://wa.me/4915777120812" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="currentColor"
+              d="M19.11 17.44c-.27-.14-1.62-.8-1.87-.89-.25-.09-.43-.14-.61.14-.18.27-.7.89-.86 1.07-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.35-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.99 2.66 1.13 2.84c.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.62-.66 1.85-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32zM16.01 3C8.83 3 3 8.83 3 16c0 2.82.93 5.43 2.5 7.53L3 29l5.65-2.47A12.93 12.93 0 0 0 16 29c7.18 0 13-5.83 13-13S23.18 3 16.01 3z"/>
+          </svg>
+          Anfrage per WhatsApp
+        </a>
       </div>
-    </section>
-
+    </div>
+  </div>
+</section>
     <!-- Kontakt -->
     <section class="section section--alt" id="contact">
       <div class="container">

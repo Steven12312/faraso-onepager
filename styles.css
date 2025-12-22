@@ -279,11 +279,19 @@ body{
   height:160px;
   object-fit: cover;
   display:block;
-  border-bottom:1px solid var(--line);
+  /*border-bottom:1px solid var(--line);*/
+    border-bottom: none;
 }
 
-.cat-body{ padding:14px; }
-.cat-title{ font-weight: 900; font-size: 1.05rem; }
+/* Unteren schwarzen Bereich komplett entfernen */
+.cat-body{
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.cat-title{
+  display: none;
+}
 .cat-sub{ color: var(--muted); margin-top:4px; }
 
 .cat-result{ margin-top: 12px; }

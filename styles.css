@@ -301,3 +301,19 @@ body{
   .cat-img{ height: 180px; }
 }
 
+/* Scroll Animation: von links nach rechts */
+.cat-card{
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity .6s ease-out,
+    transform .6s ease-out;
+}
+
+/* Sichtbar, wenn aktiv */
+.cat-card.is-visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+

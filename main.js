@@ -149,3 +149,30 @@ catGrid?.addEventListener("click", (e) => {
 
 // Default anzeigen
 renderCat("pizza");
+
+
+// Scroll Animation für Kategorie-Kacheln
+const cards = document.querySelectorAll(".cat-card");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Stagger: nacheinander einfliegen
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("is-visible");
+          }, index * 120); // 👈 Zeitabstand
+        });
+        observer.disconnect(); // nur einmal ausführen
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
+
+if (cards.length) {
+  observer.observe(cards[0]);
+}

@@ -47,8 +47,6 @@ body{
   padding: 0;
   display: block;
 }
-
-
 .brand__name{font-weight:900; letter-spacing:.6px}
 
 .nav{display:flex; gap:18px; align-items:center}
@@ -93,6 +91,7 @@ body{
 }
 .hero__cardTop{padding:18px}
 .hero__cardBottom{padding:18px; border-top:1px solid var(--line); display:grid; gap:10px}
+
 .badge{
   display:inline-block;
   padding:6px 10px;
@@ -208,6 +207,8 @@ body{
   }
   .nav.is-open{display:flex}
 }
+
+/* Demo Banner */
 .dev-banner{
   position: sticky;
   top: 0;
@@ -220,32 +221,36 @@ body{
   font-size: 0.9rem;
   border-bottom: 2px solid rgba(0,0,0,0.15);
 }
+
+/* WhatsApp */
 .btn--whatsapp{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-
 .wa-icon{
   width: 18px;
   height: 18px;
   flex: 0 0 18px;
-  color: #25D366; /* passt zu btn--primary (Text ist dunkel) */
+  color: #25D366;
 }
+
+/* Contact Buttons */
 .contact-actions{
   display: flex;
   flex-direction: column;
-  align-items: center;     /* 👈 horizontal mittig */
-  gap: 12px;               /* Abstand zwischen Buttons */
+  align-items: center;
+  gap: 12px;
   margin-top: 12px;
 }
-
 .contact-actions .btn{
   width: 100%;
-  max-width: 260px;        /* 👈 gleiche Button-Breite */
-  justify-content: center; /* Text & Icon mittig */
+  max-width: 260px;
+  justify-content: center;
 }
+
+/* Sortiment Kategorie-Kacheln */
 .cat-grid{
   display:grid;
   grid-template-columns: repeat(2, 1fr);
@@ -265,6 +270,7 @@ body{
   text-align:left;
   display:flex;
   flex-direction:column;
+  transition: transform .15s ease, opacity .6s ease, transform .6s ease;
 }
 
 .cat-card:hover{ transform: translateY(-1px); }
@@ -279,20 +285,8 @@ body{
   height:160px;
   object-fit: cover;
   display:block;
-  /*border-bottom:1px solid var(--line);*/
-    border-bottom: none;
+  border-bottom: none;
 }
-
-/* Unteren schwarzen Bereich komplett entfernen */
-.cat-body{
-  display: none;
-  padding: 0;
-  margin: 0;
-}
-.cat-title{
-  display: none;
-}
-.cat-sub{ color: var(--muted); margin-top:4px; }
 
 .cat-result{ margin-top: 12px; }
 
@@ -301,30 +295,35 @@ body{
   .cat-img{ height: 180px; }
 }
 
-/* Scroll Animation: von links nach rechts */
-/* Startzustand: versteckt */
+/* -------------------------------
+   Scroll Animation (FAILSAFE)
+   Ohne JS sind Karten sichtbar.
+   ------------------------------- */
 .cat-card{
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity .6s ease, transform .6s ease;
+  opacity: 1;
+  transform: none;
 }
 
-/* Sichtbar */
-.cat-card.is-visible{
+body.js .cat-card{
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+body.js .cat-card.is-visible{
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Wenn wir beim Hochscrollen ausblenden wollen: nach rechts raus */
-.cat-card.out-right{
+body.js .cat-card.out-right{
   opacity: 0;
   transform: translateX(40px);
 }
 
-/* Wenn wir beim Runterscrollen ausblenden wollen: nach links raus (optional) */
-.cat-card.out-left{
+body.js .cat-card.out-left{
   opacity: 0;
   transform: translateX(-40px);
+}
+
 }
 
 

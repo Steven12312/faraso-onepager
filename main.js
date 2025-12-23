@@ -154,25 +154,46 @@ renderCat("pizza");
 // Scroll Animation für Kategorie-Kacheln
 const cards = document.querySelectorAll(".cat-card");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Stagger: nacheinander einfliegen
-        cards.forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add("is-visible");
-          }, index * 120); // 👈 Zeitabstand
-        });
-        observer.disconnect(); // nur einmal ausführen
-      }
-    });
-  },
-  {
-    threshold: 0.3,
-  }
-);
+// Scrollrichtung merken
+let lastY = window.scrollY;
+let scrollingDown = true;
 
-if (cards.length) {
-  observer.observe(cards[0]);
-}
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+  scrollingDown = y > lastY;
+  lastY = y;
+}, { passive: true });
+
+// Karten beobachten
+const cards = Array.from(document.querySelectorAll(".cat-card"));
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const card = entry.target;
+
+    if (entry.isIntersecting) {
+      // Rein: immer sichtbar machen + raus-Klassen entfernen
+      card.classList.remove("out-left", "out-right");
+      // Stagger rein (nacheinander)
+      const idx = cards.indexOf(card);
+      card.style.transitionDelay = `${idx * 120}ms`;
+      card.classList.add("is-visible");
+    } else {
+      // Raus: je nach Richtung
+      card.style.transitionDelay = `0ms`;
+      card.classList.remove("is-visible");
+
+      if (scrollingDown) {
+        // beim Runterscrollen: nach links raus
+        card.classList.remove("out-right");
+        card.classList.add("out-left");
+      } else {
+        // beim Hochscrollen: nach rechts raus
+        card.classList.remove("out-left");
+        card.classList.add("out-right");
+      }
+    }
+  });
+}, { threshold: 0.35 });
+
+cards.forEach(c => io.observe(c));

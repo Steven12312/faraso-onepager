@@ -1,3 +1,6 @@
+// JS-Flag für CSS (damit Animation nur läuft, wenn JS wirklich aktiv ist)
+document.body.classList.add("js");
+
 // Mobile Menü
 const navBtn = document.getElementById("navbtn");
 const nav = document.getElementById("nav");
@@ -15,7 +18,8 @@ document.querySelectorAll(".nav__link").forEach(a => {
 });
 
 // Footer Jahr
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Top Seller (Fokus)
 const topseller = [
@@ -42,46 +46,6 @@ if (topsellerGrid) {
     </article>
   `).join("");
 }
-
-// Sortiment-Listen (aus deinem PDF)
-const pizzaItems = [
-  "20×20×4 cm (100 Stk)",
-  "22×22×4 cm (100 Stk)",
-  "24×24×4 cm (100 Stk)",
-  "26×26×4 cm (100 Stk)",
-  "28×28×… cm (100 Stk)",
-  "29×29×4 cm (100 Stk)",
-  "30×30×4 cm (100 Stk)",
-  "31×31×4 cm (100 Stk)",
-  "32×32×4 cm (100 Stk)",
-  "33×33×4 cm (100 Stk)",
-  "36×36×4 cm (100 Stk)",
-  "40×40×4 cm (100 Stk)",
-  "60×40×5 cm (50 Stk)",
-  "45×45×5 cm (50 Stk)",
-  "50×50×5 cm (50 Stk)",
-  "33×49×4 cm (50 Stk)",
-];
-
-const aluItems = [
-  "R45L mit Deckel (1000 Stk)",
-  "R13L mit Deckel (500 Stk)",
-  "R14L mit Deckel (500 Stk)",
-  "R80L 2-geteilt mit Deckel (800 Stk)",
-  "R81L 3-geteilt mit Deckel (800 Stk)",
-  "R28L mit Deckel (1000 Stk)",
-  "C803L rund mit Deckel (400 Stk)",
-  "C807L rund mit Deckel (400 Stk)",
-  "C801L rund mit Deckel (600 Stk)",
-  "R84L mit Deckel (800 Stk)",
-  "R1L mit Deckel (1000 Stk)",
-];
-
-const pizzaList = document.getElementById("pizzaList");
-if (pizzaList) pizzaList.innerHTML = pizzaItems.map(x => `<li>${x}</li>`).join("");
-
-const aluList = document.getElementById("aluList");
-if (aluList) aluList.innerHTML = aluItems.map(x => `<li>${x}</li>`).join("");
 
 // --- Sortiment: Kategorie-Auswahl mit Bildern ---
 const data = {
@@ -128,14 +92,13 @@ const catGrid = document.getElementById("catGrid");
 const catHeading = document.getElementById("catHeading");
 const catList = document.getElementById("catList");
 
-function renderCat(key){
+function renderCat(key) {
   const cat = data[key];
   if (!cat || !catHeading || !catList) return;
 
   catHeading.textContent = cat.heading;
   catList.innerHTML = cat.items.map(x => `<li>${x}</li>`).join("");
 
-  // Active State
   document.querySelectorAll(".cat-card").forEach(btn => {
     btn.classList.toggle("is-active", btn.dataset.cat === key);
   });
@@ -150,11 +113,12 @@ catGrid?.addEventListener("click", (e) => {
 // Default anzeigen
 renderCat("pizza");
 
+// -----------------------------
+// Scroll Animation: rein/raus + Richtung
+// (sicher, ohne Doppel-const, ohne disconnect)
+// -----------------------------
+const cards = Array.from(document.querySelectorAll(".cat-card"));
 
-// Scroll Animation für Kategorie-Kacheln
-const cards = document.querySelectorAll(".cat-card");
-
-// Scrollrichtung merken
 let lastY = window.scrollY;
 let scrollingDown = true;
 
@@ -164,36 +128,35 @@ window.addEventListener("scroll", () => {
   lastY = y;
 }, { passive: true });
 
-// Karten beobachten
-const cards = Array.from(document.querySelectorAll(".cat-card"));
+if (cards.length && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const card = entry.target;
 
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    const card = entry.target;
-
-    if (entry.isIntersecting) {
-      // Rein: immer sichtbar machen + raus-Klassen entfernen
-      card.classList.remove("out-left", "out-right");
-      // Stagger rein (nacheinander)
-      const idx = cards.indexOf(card);
-      card.style.transitionDelay = `${idx * 120}ms`;
-      card.classList.add("is-visible");
-    } else {
-      // Raus: je nach Richtung
-      card.style.transitionDelay = `0ms`;
-      card.classList.remove("is-visible");
-
-      if (scrollingDown) {
-        // beim Runterscrollen: nach links raus
-        card.classList.remove("out-right");
-        card.classList.add("out-left");
+      if (entry.isIntersecting) {
+        // Rein: sichtbar + stagger
+        card.classList.remove("out-left", "out-right");
+        const idx = cards.indexOf(card);
+        card.style.transitionDelay = `${idx * 120}ms`;
+        card.classList.add("is-visible");
       } else {
-        // beim Hochscrollen: nach rechts raus
-        card.classList.remove("out-left");
-        card.classList.add("out-right");
-      }
-    }
-  });
-}, { threshold: 0.35 });
+        // Raus: je nach Richtung
+        card.style.transitionDelay = "0ms";
+        card.classList.remove("is-visible");
 
-cards.forEach(c => io.observe(c));
+        if (scrollingDown) {
+          card.classList.remove("out-right");
+          card.classList.add("out-left");
+        } else {
+          card.classList.remove("out-left");
+          card.classList.add("out-right");
+        }
+      }
+    });
+  }, { threshold: 0.35 });
+
+  cards.forEach(c => io.observe(c));
+} else {
+  // Fallback: wenn kein IO → einfach sichtbar lassen
+  cards.forEach(c => c.classList.add("is-visible"));
+}

@@ -302,18 +302,29 @@ body{
 }
 
 /* Scroll Animation: von links nach rechts */
+/* Startzustand: versteckt */
 .cat-card{
   opacity: 0;
   transform: translateX(-40px);
-  transition:
-    opacity .6s ease-out,
-    transform .6s ease-out;
+  transition: opacity .6s ease, transform .6s ease;
 }
 
-/* Sichtbar, wenn aktiv */
+/* Sichtbar */
 .cat-card.is-visible{
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Wenn wir beim Hochscrollen ausblenden wollen: nach rechts raus */
+.cat-card.out-right{
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+/* Wenn wir beim Runterscrollen ausblenden wollen: nach links raus (optional) */
+.cat-card.out-left{
+  opacity: 0;
+  transform: translateX(-40px);
 }
 
 
